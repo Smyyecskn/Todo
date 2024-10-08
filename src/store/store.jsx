@@ -5,8 +5,8 @@ import { todoReducer } from "./todoReducer";
 // export const store = createStore(counterReducer);
 
 export const rootReducer = combineReducers({
-  counterReducer,
-  todoReducer,
+  counter: counterReducer,
+  todo: todoReducer,
 });
 
 export const store = createStore(rootReducer);

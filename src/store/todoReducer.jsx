@@ -1,5 +1,7 @@
 const initialState = {
-  todoList: [{ id: new Date.getTime(), text: "Learn REDUX", completed: false }],
+  todoList: [
+    { id: new Date().getTime(), text: "Learn REDUX", completed: false },
+  ],
 };
 
 export const ADD = "ADD";
@@ -19,7 +21,7 @@ export const todoReducer = (state = initialState, { type, payload }) => {
       return {
         todoList: [
           ...state.todoList,
-          { id: new Date.getTime(), text: payload, completed: false },
+          { id: new Date().getTime(), text: payload, completed: false },
         ],
       };
 
