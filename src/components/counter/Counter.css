@@ -2,16 +2,16 @@
   margin-bottom: 0;
 }
 
-.counter-neg {
-  color: red;
+/* .counter-neg {
+  color: rgb(0, 255, 4);
 }
 .counter-pos {
-  color: green;
+  color: rgb(238, 97, 21);
 }
 
 .counter-zero {
-  color: white;
-}
+  color: rgb(183, 45, 155);
+} */
 
 .counter-button {
   font-size: 1rem;
@@ -22,11 +22,11 @@
 }
 
 .positive {
-  background-color: green;
+  background-color: rgb(245, 112, 29);
   color: white;
 }
 
 .negative {
-  background-color: red;
+  background-color: rgb(25, 0, 255);
   color: white;
 }
