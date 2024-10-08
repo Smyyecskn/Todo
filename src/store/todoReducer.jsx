@@ -1,6 +1,6 @@
 const initialState = {
   todoList: [
-    { id: new Date().getTime(), text: "Learn REDUX", completed: false },
+    { id: new Date().getTime(), text: "Learn React-Redux", completed: false },
   ],
 };
 
@@ -11,8 +11,8 @@ export const CMP = "CMP";
 
 // actionCreatator
 export const addTodo = (payload) => ({ type: ADD, payload });
-export const delTodo = () => ({ type: DEL });
-export const clrTodo = () => ({ type: CLR });
+export const delTodo = (payload) => ({ type: DEL, payload });
+export const clearTodo = () => ({ type: CLR });
 export const cmpTodo = (payload) => ({ type: CMP, payload });
 
 export const todoReducer = (state = initialState, { type, payload }) => {
@@ -23,6 +23,22 @@ export const todoReducer = (state = initialState, { type, payload }) => {
           ...state.todoList,
           { id: new Date().getTime(), text: payload, completed: false },
         ],
+      };
+
+    case CLR:
+      return {
+        todoList: [],
+      };
+    case DEL:
+      return {
+        todoList: state.todoList.filter((todo) => todo.id !== payload),
+      };
+
+    case CMP:
+      return {
+        todoList: state.todoList.map((todo) =>
+          todo.id === payload ? { ...todo, completed: !todo.completed } : todo
+        ),
       };
 
     default:
